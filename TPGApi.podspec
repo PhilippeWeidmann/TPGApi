@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TPGApi"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A wrapper to fetch Geneva's public transport (TPG) real time informations"
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  # s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "TPGApi", "TPGApi/**/*.{h,m,swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
