@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35BEAA2EE95F5EBD7880B02B /* Pods_TPGApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810AFFB01B0088FFED9846AB /* Pods_TPGApiTests.framework */; };
 		379AB3CB21903541009C416B /* TPGApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AB3C121903541009C416B /* TPGApi.framework */; };
 		379AB3D021903541009C416B /* TPGApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379AB3CF21903541009C416B /* TPGApiTests.swift */; };
 		379AB3D221903541009C416B /* TPGApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 379AB3C421903541009C416B /* TPGApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F71D29E51F17AD4A724DBC80 /* Pods_TPGApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B5DEE5F5FFD19D41D8DCC /* Pods_TPGApi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06D4368F10EF839F6C3FCBC7 /* Pods-TPGApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApi/Pods-TPGApi.release.xcconfig"; sourceTree = "<group>"; };
+		1A0B5DEE5F5FFD19D41D8DCC /* Pods_TPGApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPGApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		222CE33D21CF86BBBC5C4863 /* Pods-TPGApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		35168C86E10662B36D7CA46D /* Pods-TPGApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests.release.xcconfig"; sourceTree = "<group>"; };
 		379AB3C121903541009C416B /* TPGApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPGApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		379AB3C421903541009C416B /* TPGApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPGApi.h; sourceTree = "<group>"; };
 		379AB3C521903541009C416B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379AB3CA21903541009C416B /* TPGApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379AB3CF21903541009C416B /* TPGApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGApiTests.swift; sourceTree = "<group>"; };
 		379AB3D121903541009C416B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B3DF7BE57196832A72EB171 /* Pods-TPGApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApi/Pods-TPGApi.debug.xcconfig"; sourceTree = "<group>"; };
+		810AFFB01B0088FFED9846AB /* Pods_TPGApiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPGApiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71D29E51F17AD4A724DBC80 /* Pods_TPGApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379AB3CB21903541009C416B /* TPGApi.framework in Frameworks */,
+				35BEAA2EE95F5EBD7880B02B /* Pods_TPGApiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +66,8 @@
 				379AB3C321903541009C416B /* TPGApi */,
 				379AB3CE21903541009C416B /* TPGApiTests */,
 				379AB3C221903541009C416B /* Products */,
+				CD4FFB261175DE32F49F245E /* Pods */,
+				BA1F0854E7E7B61A2D92E12D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +98,26 @@
 			path = TPGApiTests;
 			sourceTree = "<group>";
 		};
+		BA1F0854E7E7B61A2D92E12D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A0B5DEE5F5FFD19D41D8DCC /* Pods_TPGApi.framework */,
+				810AFFB01B0088FFED9846AB /* Pods_TPGApiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD4FFB261175DE32F49F245E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B3DF7BE57196832A72EB171 /* Pods-TPGApi.debug.xcconfig */,
+				06D4368F10EF839F6C3FCBC7 /* Pods-TPGApi.release.xcconfig */,
+				222CE33D21CF86BBBC5C4863 /* Pods-TPGApiTests.debug.xcconfig */,
+				35168C86E10662B36D7CA46D /* Pods-TPGApiTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,10 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379AB3D521903541009C416B /* Build configuration list for PBXNativeTarget "TPGApi" */;
 			buildPhases = (
+				FA1F8B368C0F48C357E376E7 /* [CP] Check Pods Manifest.lock */,
 				379AB3BC21903541009C416B /* Headers */,
 				379AB3BD21903541009C416B /* Sources */,
 				379AB3BE21903541009C416B /* Frameworks */,
 				379AB3BF21903541009C416B /* Resources */,
+				C6F4B496BCB0A7CB3950CF84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379AB3D821903541009C416B /* Build configuration list for PBXNativeTarget "TPGApiTests" */;
 			buildPhases = (
+				32F57B931D321B9A43CCD3B7 /* [CP] Check Pods Manifest.lock */,
 				379AB3C621903541009C416B /* Sources */,
 				379AB3C721903541009C416B /* Frameworks */,
 				379AB3C821903541009C416B /* Resources */,
+				0CAC2EE7FBB9D0A67C9FC7EF /* [CP] Embed Pods Frameworks */,
+				F4BF542B1E552308690F9050 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +225,115 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CAC2EE7FBB9D0A67C9FC7EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32F57B931D321B9A43CCD3B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TPGApiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6F4B496BCB0A7CB3950CF84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPGApi/Pods-TPGApi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4BF542B1E552308690F9050 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA1F8B368C0F48C357E376E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TPGApi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		379AB3BD21903541009C416B /* Sources */ = {
@@ -340,6 +486,7 @@
 		};
 		379AB3D621903541009C416B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B3DF7BE57196832A72EB171 /* Pods-TPGApi.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +511,7 @@
 		};
 		379AB3D721903541009C416B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06D4368F10EF839F6C3FCBC7 /* Pods-TPGApi.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +536,7 @@
 		};
 		379AB3D921903541009C416B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 222CE33D21CF86BBBC5C4863 /* Pods-TPGApiTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPGApiTests/Info.plist;
@@ -405,6 +554,7 @@
 		};
 		379AB3DA21903541009C416B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35168C86E10662B36D7CA46D /* Pods-TPGApiTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPGApiTests/Info.plist;

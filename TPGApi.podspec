@@ -131,7 +131,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "SwiftyJSON"
-  s.dependency "Alamofire"
-
+  s.dependency "SwiftyJSON", '> 4'
+  s.dependency "Alamofire", '> 4.7'
 end
