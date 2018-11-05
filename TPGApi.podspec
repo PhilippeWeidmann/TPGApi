@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TPGApi"
-  s.version      = "0.0.2"
+  s.version      = "0.0.1"
   s.summary      = "A wrapper to fetch Geneva's public transport (TPG) real time informations"
 
   # This description is used to generate tags and improve search results.
