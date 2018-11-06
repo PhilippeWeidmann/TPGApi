@@ -13,9 +13,9 @@ import MapKit
 
 public class StopManager {
     
-    static let instance = StopManager()
-    private(set) var physicalStops = [String : TPGStop]()
-    private(set) var stops = [String : TPGStop]()
+    public static let instance = StopManager()
+    public private(set) var physicalStops = [String : TPGStop]()
+    public private(set) var stops = [String : TPGStop]()
 
     private var lineColors = [String : LineColor]()
     
@@ -28,7 +28,7 @@ public class StopManager {
      - Parameter completion: The completion results in one array of commercial [TPGStop], second is an array of physical [TPGStop]
      - Parameter force: Optional parameter to force getting the stops online
      */
-    func loadStops(completion: (([String : TPGStop],[String : TPGStop]) -> Void)? = nil, force: Bool? = false){
+    public func loadStops(completion: (([String : TPGStop],[String : TPGStop]) -> Void)? = nil, force: Bool? = false){
         if(force!){
             self.fetchStops(completion: completion)
         }
@@ -106,7 +106,7 @@ public class StopManager {
      - Parameter name: The stop name as seen on a sign
      - Returns: An array of stops matching this name
      */
-    func getPhyscialStopsFromName(_ name: String) -> [TPGStop] {
+    public func getPhyscialStopsFromName(_ name: String) -> [TPGStop] {
         var stops = [TPGStop]()
         stops.append(contentsOf: physicalStops.values.filter({$0.name == name}))
         
@@ -120,7 +120,7 @@ public class StopManager {
      - Parameter direction: The line destination name as seen on a sign
      - Returns: An array of stops matching this name and direction (should always be of size 1)
      */
-    func getStopsFromNameAndDirection(name: String, direction: String) -> [TPGStop] {
+    public func getStopsFromNameAndDirection(name: String, direction: String) -> [TPGStop] {
         let formattedDirection = direction.lowercased()
         var stops = [TPGStop]()
         
@@ -141,7 +141,7 @@ public class StopManager {
      - Parameter code: The line code displayed on the sign
      - Returns: A line color object representing the colors seen on the sign
      */
-    func getLineColor(code: String) -> LineColor {
+    public func getLineColor(code: String) -> LineColor {
         if let color = lineColors[code]{
             return color
         }
@@ -155,7 +155,7 @@ public class StopManager {
      - Parameter completion: The delegate called after completion
      - Returns: A line color object representing the colors seen on the sign
      */
-    func getLineColor(code: String, completion: @escaping ((LineColor) -> Void)) {
+    public func getLineColor(code: String, completion: @escaping ((LineColor) -> Void)) {
         let url = "https://prod.ivtr-od.tpg.ch/v1/GetLinesColors.json?key=\(TPGApiKey.key)"
         
         Alamofire.request(url, method: .get).validate().responseJSON { response in

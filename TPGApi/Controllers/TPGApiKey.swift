@@ -10,5 +10,5 @@ import Foundation
 
 public class TPGApiKey{
     
-    static var key = ""
+    public static var key = ""
 }

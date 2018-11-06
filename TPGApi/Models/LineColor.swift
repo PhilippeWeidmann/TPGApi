@@ -11,17 +11,17 @@ import SwiftyJSON
 
 public class LineColor {
     
-    static var noColor = LineColor()
+    public static var noColor = LineColor()
     
     
     /**
      The color of the line icon displayed on the signs
      */
-    var backgroundColor: UIColor
+    public var backgroundColor: UIColor
     /**
      The color of the line code text displayed on the signs
      */
-    var textColor: UIColor
+    public var textColor: UIColor
     
     init(jsonColor: JSON) {
         self.backgroundColor = UIColor(hexString: jsonColor["background"].stringValue)

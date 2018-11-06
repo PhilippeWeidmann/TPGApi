@@ -12,7 +12,7 @@ import Alamofire
 
 public class DeparturesManager {
     
-    static let instance = DeparturesManager()
+    public static let instance = DeparturesManager()
     
     private init(){
     }
@@ -23,7 +23,7 @@ public class DeparturesManager {
      - Parameter sender:  The delegate to callback
      - Parameter completion: The completion results in one array of [TPGDeparture]
      */
-    func loadNextDeparturesFor(stopCode: String, completion: @escaping (([TPGDeparture]) -> Void)){
+    public func loadNextDeparturesFor(stopCode: String, completion: @escaping (([TPGDeparture]) -> Void)){
         var departures = [TPGDeparture]()
         let url = "https://prod.ivtr-od.tpg.ch/v1/GetNextDepartures.json?stopCode=\(stopCode)&key=\(TPGApiKey.key)"
         

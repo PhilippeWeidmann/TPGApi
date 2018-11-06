@@ -11,13 +11,13 @@ import SwiftyJSON
 
 public class TPGDeparture: NSObject {
     
-    var waitingTime: Int
-    var destinationName: String
-    var destinationCode: String
-    var lineCode: String
-    var vehiculeType: VehiculeType
+    public var waitingTime: Int
+    public var destinationName: String
+    public var destinationCode: String
+    public var lineCode: String
+    public var vehiculeType: VehiculeType
     
-    enum VehiculeType {
+    public enum VehiculeType {
         case tramway
         case bus
     }

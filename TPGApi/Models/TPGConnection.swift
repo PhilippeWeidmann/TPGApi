@@ -11,9 +11,9 @@ import SwiftyJSON
 
 public class TPGConnection {
     
-    var lineCode: String
-    var destination: String
-    var destinationCode: String
+    public var lineCode: String
+    public var destination: String
+    public var destinationCode: String
     
     init(jsonConnection: JSON) {
         self.lineCode = jsonConnection["lineCode"].stringValue
