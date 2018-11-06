@@ -7,7 +7,7 @@ TPG API wrapper to fetch stops and next departures for Geneva's public transport
 Add this line in your PodFile
 
 ```
-pod 'TPGApi', '~> 0.0'
+pod 'TPGApi'
 ```
 
 
