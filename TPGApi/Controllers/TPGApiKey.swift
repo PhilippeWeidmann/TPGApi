@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TPGApiKey{
+public class TPGApiKey{
     
     static var key = ""
 }

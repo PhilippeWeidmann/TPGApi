@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class TPGDeparture: NSObject {
+public class TPGDeparture: NSObject {
     
     var waitingTime: Int
     var destinationName: String
@@ -30,7 +30,7 @@ class TPGDeparture: NSObject {
         self.vehiculeType = jsonDeparture["vehiculeType"].stringValue.starts(with: "TW") ? .tramway : .bus
     }
     
-    override var description : String {
+    override public var description : String {
         return "\(lineCode) -> \(destinationName) (\(destinationCode)):  \(waitingTime)min"
     }
 }

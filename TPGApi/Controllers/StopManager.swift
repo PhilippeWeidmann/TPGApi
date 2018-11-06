@@ -11,7 +11,7 @@ import SwiftyJSON
 import Alamofire
 import MapKit
 
-class StopManager {
+public class StopManager {
     
     static let instance = StopManager()
     private(set) var physicalStops = [String : TPGStop]()

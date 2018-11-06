@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class TPGConnection {
+public class TPGConnection {
     
     var lineCode: String
     var destination: String

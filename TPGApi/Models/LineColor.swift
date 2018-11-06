@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class LineColor {
+public class LineColor {
     
     static var noColor = LineColor()
     
@@ -34,7 +34,7 @@ class LineColor {
     }
 }
 extension LineColor: Equatable {
-    static func == (lhs: LineColor, rhs: LineColor) -> Bool {
+    public static func == (lhs: LineColor, rhs: LineColor) -> Bool {
         return lhs.backgroundColor == rhs.backgroundColor && lhs.textColor == rhs.textColor
     }
 }

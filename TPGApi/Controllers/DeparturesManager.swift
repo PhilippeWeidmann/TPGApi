@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-class DeparturesManager {
+public class DeparturesManager {
     
     static let instance = DeparturesManager()
     

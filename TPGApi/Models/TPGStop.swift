@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import CoreLocation
 
-class TPGStop {
+public class TPGStop {
     
     var commercialCode: String
     var code: String
