@@ -21,7 +21,7 @@ You have to provide wherever you want in the code like this:
 TPGApi.key = "your key"
 ```
 
-## List of all stops in Geneva
+### List of all stops in Geneva
 
 Stops have it be loaded at least once, this is done asychronously. Once downloaded the stops are cached on the device.
 ```
@@ -30,7 +30,7 @@ StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
 }, force: false)
 ```
 
-## Next departures for a stop
+### Next departures for a stop
 
 Get next departures for stop code 'Gare Cornavin'
 ```
