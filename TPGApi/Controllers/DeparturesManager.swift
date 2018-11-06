@@ -25,7 +25,7 @@ class DeparturesManager {
      */
     func loadNextDeparturesFor(stopCode: String, completion: @escaping (([TPGDeparture]) -> Void)){
         var departures = [TPGDeparture]()
-        let url = "https://prod.ivtr-od.tpg.ch/v1/GetNextDepartures.json?stopCode=\(stopCode)&key=\(TPGApi.key)"
+        let url = "https://prod.ivtr-od.tpg.ch/v1/GetNextDepartures.json?stopCode=\(stopCode)&key=\(TPGApiKey.key)"
         
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

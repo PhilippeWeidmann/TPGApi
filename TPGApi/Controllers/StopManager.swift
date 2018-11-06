@@ -59,7 +59,7 @@ class StopManager {
     }
     
     private func fetchStops(completion: (([String : TPGStop],[String : TPGStop]) -> Void)? = nil){
-        let url = "https://prod.ivtr-od.tpg.ch/v1/GetPhysicalStops.json?key=\(TPGApi.key)"
+        let url = "https://prod.ivtr-od.tpg.ch/v1/GetPhysicalStops.json?key=\(TPGApiKey.key)"
         
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -156,7 +156,7 @@ class StopManager {
      - Returns: A line color object representing the colors seen on the sign
      */
     func getLineColor(code: String, completion: @escaping ((LineColor) -> Void)) {
-        let url = "https://prod.ivtr-od.tpg.ch/v1/GetLinesColors.json?key=\(TPGApi.key)"
+        let url = "https://prod.ivtr-od.tpg.ch/v1/GetLinesColors.json?key=\(TPGApiKey.key)"
         
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

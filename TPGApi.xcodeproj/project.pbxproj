@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		35BEAA2EE95F5EBD7880B02B /* Pods_TPGApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810AFFB01B0088FFED9846AB /* Pods_TPGApiTests.framework */; };
+		376E20F42191D23B00DC28D6 /* TPGDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EA2191D23A00DC28D6 /* TPGDeparture.swift */; };
+		376E20F52191D23B00DC28D6 /* TPGStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EB2191D23A00DC28D6 /* TPGStop.swift */; };
+		376E20F62191D23B00DC28D6 /* LineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EC2191D23A00DC28D6 /* LineColor.swift */; };
+		376E20F72191D23B00DC28D6 /* TPGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20ED2191D23A00DC28D6 /* TPGConnection.swift */; };
+		376E20F82191D23B00DC28D6 /* FileSaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EF2191D23B00DC28D6 /* FileSaveHelper.swift */; };
+		376E20F92191D23B00DC28D6 /* DeparturesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20F12191D23B00DC28D6 /* DeparturesManager.swift */; };
+		376E20FA2191D23B00DC28D6 /* StopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20F22191D23B00DC28D6 /* StopManager.swift */; };
+		376E20FB2191D23B00DC28D6 /* TPGApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20F32191D23B00DC28D6 /* TPGApiKey.swift */; };
 		379AB3CB21903541009C416B /* TPGApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AB3C121903541009C416B /* TPGApi.framework */; };
 		379AB3D021903541009C416B /* TPGApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379AB3CF21903541009C416B /* TPGApiTests.swift */; };
 		379AB3D221903541009C416B /* TPGApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 379AB3C421903541009C416B /* TPGApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +37,14 @@
 		1A0B5DEE5F5FFD19D41D8DCC /* Pods_TPGApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPGApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222CE33D21CF86BBBC5C4863 /* Pods-TPGApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35168C86E10662B36D7CA46D /* Pods-TPGApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests.release.xcconfig"; sourceTree = "<group>"; };
+		376E20EA2191D23A00DC28D6 /* TPGDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGDeparture.swift; sourceTree = "<group>"; };
+		376E20EB2191D23A00DC28D6 /* TPGStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGStop.swift; sourceTree = "<group>"; };
+		376E20EC2191D23A00DC28D6 /* LineColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColor.swift; sourceTree = "<group>"; };
+		376E20ED2191D23A00DC28D6 /* TPGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGConnection.swift; sourceTree = "<group>"; };
+		376E20EF2191D23B00DC28D6 /* FileSaveHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSaveHelper.swift; sourceTree = "<group>"; };
+		376E20F12191D23B00DC28D6 /* DeparturesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesManager.swift; sourceTree = "<group>"; };
+		376E20F22191D23B00DC28D6 /* StopManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopManager.swift; sourceTree = "<group>"; };
+		376E20F32191D23B00DC28D6 /* TPGApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGApiKey.swift; sourceTree = "<group>"; };
 		379AB3C121903541009C416B /* TPGApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPGApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		379AB3C421903541009C416B /* TPGApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPGApi.h; sourceTree = "<group>"; };
 		379AB3C521903541009C416B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +76,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		376E20E92191D23A00DC28D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				376E20EA2191D23A00DC28D6 /* TPGDeparture.swift */,
+				376E20EB2191D23A00DC28D6 /* TPGStop.swift */,
+				376E20EC2191D23A00DC28D6 /* LineColor.swift */,
+				376E20ED2191D23A00DC28D6 /* TPGConnection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		376E20EE2191D23B00DC28D6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				376E20EF2191D23B00DC28D6 /* FileSaveHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		376E20F02191D23B00DC28D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				376E20F12191D23B00DC28D6 /* DeparturesManager.swift */,
+				376E20F22191D23B00DC28D6 /* StopManager.swift */,
+				376E20F32191D23B00DC28D6 /* TPGApiKey.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		379AB3B721903541009C416B = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				379AB3C421903541009C416B /* TPGApi.h */,
+				376E20F02191D23B00DC28D6 /* Controllers */,
+				376E20E92191D23A00DC28D6 /* Models */,
+				376E20EE2191D23B00DC28D6 /* Utils */,
 				379AB3C521903541009C416B /* Info.plist */,
 			);
 			path = TPGApi;
@@ -340,6 +388,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376E20F42191D23B00DC28D6 /* TPGDeparture.swift in Sources */,
+				376E20F72191D23B00DC28D6 /* TPGConnection.swift in Sources */,
+				376E20FA2191D23B00DC28D6 /* StopManager.swift in Sources */,
+				376E20F92191D23B00DC28D6 /* DeparturesManager.swift in Sources */,
+				376E20FB2191D23B00DC28D6 /* TPGApiKey.swift in Sources */,
+				376E20F62191D23B00DC28D6 /* LineColor.swift in Sources */,
+				376E20F52191D23B00DC28D6 /* TPGStop.swift in Sources */,
+				376E20F82191D23B00DC28D6 /* FileSaveHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 222CE33D21CF86BBBC5C4863 /* Pods-TPGApiTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPGApiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -556,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35168C86E10662B36D7CA46D /* Pods-TPGApiTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPGApiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
