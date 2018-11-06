@@ -23,7 +23,7 @@ TPGApi.key = "your key"
 
 ### List of all stops in Geneva
 
-Stops have it be loaded at least once, this is done asychronously. Once downloaded the stops are cached on the device.
+Stops have to be loaded at least once, this is done asychronously. Once downloaded the stops are cached on the device.
 ```
 StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
 
