@@ -18,7 +18,6 @@
 		376E20FB2191D23B00DC28D6 /* TPGApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20F32191D23B00DC28D6 /* TPGApiKey.swift */; };
 		379AB3CB21903541009C416B /* TPGApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379AB3C121903541009C416B /* TPGApi.framework */; };
 		379AB3D021903541009C416B /* TPGApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379AB3CF21903541009C416B /* TPGApiTests.swift */; };
-		379AB3D221903541009C416B /* TPGApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 379AB3C421903541009C416B /* TPGApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F71D29E51F17AD4A724DBC80 /* Pods_TPGApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B5DEE5F5FFD19D41D8DCC /* Pods_TPGApi.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		376E20F22191D23B00DC28D6 /* StopManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopManager.swift; sourceTree = "<group>"; };
 		376E20F32191D23B00DC28D6 /* TPGApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGApiKey.swift; sourceTree = "<group>"; };
 		379AB3C121903541009C416B /* TPGApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPGApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		379AB3C421903541009C416B /* TPGApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPGApi.h; sourceTree = "<group>"; };
 		379AB3C521903541009C416B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379AB3CA21903541009C416B /* TPGApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379AB3CF21903541009C416B /* TPGApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGApiTests.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 		379AB3C321903541009C416B /* TPGApi */ = {
 			isa = PBXGroup;
 			children = (
-				379AB3C421903541009C416B /* TPGApi.h */,
 				376E20F02191D23B00DC28D6 /* Controllers */,
 				376E20E92191D23A00DC28D6 /* Models */,
 				376E20EE2191D23B00DC28D6 /* Utils */,
@@ -173,7 +170,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				379AB3D221903541009C416B /* TPGApi.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
