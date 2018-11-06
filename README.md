@@ -7,7 +7,7 @@ TPG API wrapper to fetch stops and next departures for Geneva's public transport
 Add this line in your PodFile
 
 ```
-pod 'TPGApi', '~> 0.0'
+pod 'TPGApi'
 ```
 
 
@@ -23,7 +23,7 @@ TPGApi.key = "your key"
 
 ### List of all stops in Geneva
 
-Stops have it be loaded at least once, this is done asychronously. Once downloaded the stops are cached on the device.
+Stops have to be loaded at least once, this is done asychronously. Once downloaded the stops are cached on the device.
 ```
 StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
 
