@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/immortal79/TPGApi.git", :tag => "#{s.version}" }
   s.source_files = "TPGApi", "TPGApi/**/*.{h,m,swift}"
   s.dependency 'Alamofire', '~> 4.5'
-  s.dependency 'SwiftyJSON', '~> 4.0.0'
+  s.dependency 'SwiftyJSON', '~> 4.0'
 end
