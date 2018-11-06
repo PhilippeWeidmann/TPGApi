@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TPGApi"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "A wrapper to fetch Geneva's public transport (TPG) real time informations"
   s.description  = <<-DESC
 			You can use this pod to get next departures for a bus stop in Geneva.
