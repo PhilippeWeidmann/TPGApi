@@ -18,7 +18,7 @@ To use the API you must have a valid API key, you can request one here http://ww
 You have to provide wherever you want in the code like this:
 
 ```
-TPGApi.key = "your key"
+TPGApiKey.key = "your key"
 ```
 
 ### List of all stops in Geneva
