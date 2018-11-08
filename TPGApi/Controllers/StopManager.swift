@@ -155,36 +155,26 @@ public class StopManager {
      - Parameter completion: The delegate called after completion
      - Returns: A line color object representing the colors seen on the sign
      */
-    public func getLineColor(code: String, completion: @escaping ((LineColor) -> Void)) {
+    public func getLineColor(code: String, completion: @escaping ((LineColor) -> Void), force: Bool? = false) {
         let url = "https://prod.ivtr-od.tpg.ch/v1/GetLinesColors.json?key=\(TPGApiKey.key)"
         
-        Alamofire.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let jsonRootColors = JSON(value)
-                self.parseColorsFrom(json: jsonRootColors)
-                
-                let fileColors = FileSaveHelper(fileName: "colors", fileExtension: .json)
-                do {
-                    try fileColors.saveFileWith(fileContents: jsonRootColors.rawString()!)
-                }
-                catch {
-                    print("There was an error saving the color cache file: \(error)")
-                }
-                
-                if let color = self.lineColors[code]{
-                    completion(color)
-                }
-                else{
-                    completion(LineColor.noColor)
-                }
-                
-            case .failure(_):
-                do{
-                    let fileColors = FileSaveHelper(fileName: "colors", fileExtension: .json)
-                    let content = try fileColors.getContentsOfFile()
-                    let jsonRootColors = JSON(parseJSON: content)
+        if(!force! && lineColors.count > 0){
+            completion(self.getLineColor(code: code))
+        }
+        else{
+            Alamofire.request(url, method: .get).validate().responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let jsonRootColors = JSON(value)
                     self.parseColorsFrom(json: jsonRootColors)
+                    
+                    let fileColors = FileSaveHelper(fileName: "colors", fileExtension: .json)
+                    do {
+                        try fileColors.saveFileWith(fileContents: jsonRootColors.rawString()!)
+                    }
+                    catch {
+                        print("There was an error saving the color cache file: \(error)")
+                    }
                     
                     if let color = self.lineColors[code]{
                         completion(color)
@@ -193,9 +183,24 @@ public class StopManager {
                         completion(LineColor.noColor)
                     }
                     
-                }
-                catch{
-                    completion(LineColor.noColor)
+                case .failure(_):
+                    do{
+                        let fileColors = FileSaveHelper(fileName: "colors", fileExtension: .json)
+                        let content = try fileColors.getContentsOfFile()
+                        let jsonRootColors = JSON(parseJSON: content)
+                        self.parseColorsFrom(json: jsonRootColors)
+                        
+                        if let color = self.lineColors[code]{
+                            completion(color)
+                        }
+                        else{
+                            completion(LineColor.noColor)
+                        }
+                        
+                    }
+                    catch{
+                        completion(LineColor.noColor)
+                    }
                 }
             }
         }

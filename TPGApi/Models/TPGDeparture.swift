@@ -11,11 +11,12 @@ import SwiftyJSON
 
 public class TPGDeparture: NSObject {
     
-    public var waitingTime: Int
-    public var destinationName: String
-    public var destinationCode: String
-    public var lineCode: String
-    public var vehiculeType: VehiculeType
+    public let departureCode: String
+    public let waitingTime: Int
+    public let destinationName: String
+    public let destinationCode: String
+    public let lineCode: String
+    public let vehiculeType: VehiculeType
     
     public enum VehiculeType {
         case tramway
@@ -23,6 +24,7 @@ public class TPGDeparture: NSObject {
     }
 
     init(jsonDeparture: JSON){
+        self.departureCode = jsonDeparture["departureCode"].stringValue
         self.waitingTime = jsonDeparture["waitingTime"].intValue
         self.destinationName = jsonDeparture["line"]["destinationName"].stringValue
         self.destinationCode = jsonDeparture["line"]["destinationCode"].stringValue

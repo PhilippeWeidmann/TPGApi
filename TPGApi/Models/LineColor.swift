@@ -17,11 +17,11 @@ public class LineColor {
     /**
      The color of the line icon displayed on the signs
      */
-    public var backgroundColor: UIColor
+    public let backgroundColor: UIColor
     /**
      The color of the line code text displayed on the signs
      */
-    public var textColor: UIColor
+    public let textColor: UIColor
     
     init(jsonColor: JSON) {
         self.backgroundColor = UIColor(hexString: jsonColor["background"].stringValue)

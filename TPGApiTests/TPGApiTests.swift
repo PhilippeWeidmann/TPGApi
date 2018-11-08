@@ -12,7 +12,7 @@ import XCTest
 class TPGApiTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        TPGApiKey.key = ""
     }
 
     override func tearDown() {
@@ -89,6 +89,19 @@ class TPGApiTests: XCTestCase {
             departuresExpec.fulfill()
         })
     
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testThermometer(){
+        let departuresExpec = self.expectation(description: "Thermometer Fetching")
+        DeparturesManager.instance.loadThermometerFor(departureCode: "43844", completion: {steps in
+            let firstStep = steps.first!
+            XCTAssertEqual("43839", firstStep.departureCode)
+            XCTAssertEqual("NATI01", firstStep.stop.code)
+
+            departuresExpec.fulfill()
+        })
+        
         waitForExpectations(timeout: 5, handler: nil)
     }
 

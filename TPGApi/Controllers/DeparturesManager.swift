@@ -19,8 +19,7 @@ public class DeparturesManager {
 
     /**
      Get next departures asynchronously for a commercial stop results sent either to the delegate or the completion block.
-     - Parameter stopCode:  The code of commercial stop
-     - Parameter sender:  The delegate to callback
+     - Parameter stopCode:  The code of the commercial stop
      - Parameter completion: The completion results in one array of [TPGDeparture]
      */
     public func loadNextDeparturesFor(stopCode: String, completion: @escaping (([TPGDeparture]) -> Void)){
@@ -40,6 +39,30 @@ public class DeparturesManager {
                 completion(departures)
             case .failure(_):
                 completion(departures)
+            }
+        }
+    }
+    
+    /**
+     Get the step (stop) list for a given departure code. This method returns all the steps for the line even the ones before current time
+     - Parameter departureCode:  The code of the departure
+     - Parameter completion: The completion results in one array of [TPGStep]
+     */
+    public func loadThermometerFor(departureCode: String, completion: @escaping (([TPGStep]) -> Void)){
+        var steps = [TPGStep]()
+        let url = "https://prod.ivtr-od.tpg.ch/v1/GetThermometerPhysicalStops.json?departureCode=\(departureCode)&key=\(TPGApiKey.key)"
+        
+        Alamofire.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let jsonRootSteps = JSON(value)
+                for jsonStep in jsonRootSteps["steps"].arrayValue{
+                    steps.append(TPGStep(jsonStep: jsonStep))
+                }
+                
+                completion(steps)
+            case .failure(_):
+                completion(steps)
             }
         }
     }

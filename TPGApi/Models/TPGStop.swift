@@ -12,12 +12,12 @@ import CoreLocation
 
 public class TPGStop {
     
-    public var commercialCode: String
-    public var code: String
-    public var name: String
-    public var latitude: Double
-    public var longitude: Double
-    public var location: CLLocation
+    public let commercialCode: String
+    public let code: String
+    public let name: String
+    public let latitude: Double
+    public let longitude: Double
+    public let location: CLLocation
     public var connections: [TPGConnection]
 
     init(commercialCode: String, jsonTpgStop: JSON) {
