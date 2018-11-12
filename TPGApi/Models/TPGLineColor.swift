@@ -9,11 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-public class LineColor {
+public class TPGLineColor {
     
-    public static var noColor = LineColor()
-    
-    
+    public static var noColor = TPGLineColor()
+
+    /**
+     The code of the line displayed on the signs
+     */
+    public let lineCode: String
     /**
      The color of the line icon displayed on the signs
      */
@@ -24,17 +27,19 @@ public class LineColor {
     public let textColor: UIColor
     
     init(jsonColor: JSON) {
+        self.lineCode = jsonColor["lineCode"].stringValue
         self.backgroundColor = UIColor(hexString: jsonColor["background"].stringValue)
         self.textColor = UIColor(hexString: jsonColor["text"].stringValue)
     }
     
     private init(){
+        self.lineCode = ""
         self.backgroundColor = UIColor.darkGray
         self.textColor = UIColor.white
     }
 }
-extension LineColor: Equatable {
-    public static func == (lhs: LineColor, rhs: LineColor) -> Bool {
+extension TPGLineColor: Equatable {
+    public static func == (lhs: TPGLineColor, rhs: TPGLineColor) -> Bool {
         return lhs.backgroundColor == rhs.backgroundColor && lhs.textColor == rhs.textColor
     }
 }

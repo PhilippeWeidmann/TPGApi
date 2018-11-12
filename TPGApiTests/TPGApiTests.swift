@@ -21,7 +21,7 @@ class TPGApiTests: XCTestCase {
 
     func testGetColors() {
         var lineColor = StopManager.instance.getLineColor(code: "12")
-        XCTAssertEqual(LineColor.noColor, lineColor)
+        XCTAssertEqual(TPGLineColor.noColor, lineColor)
         
         let expectation = self.expectation(description: "Colors Fetching")
         
@@ -41,25 +41,26 @@ class TPGApiTests: XCTestCase {
 
     
     func testGetStops() {
-        let stopForceExpect = self.expectation(description: "Stops Fetching")
+        measure {
+            let stopForceExpect = self.expectation(description: "Stops Fetching")
 
-        StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
-            XCTAssertNotNil(commercialStops["CVIN"])
-            XCTAssertNotNil(physicalStops["CVIN00"])
+            StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
+                XCTAssertNotNil(commercialStops["CVIN"])
+                XCTAssertNotNil(physicalStops["CVIN00"])
+                
+                stopForceExpect.fulfill()
+            }, force: true)
+            waitForExpectations(timeout: 5, handler: nil)
+            let stopNoForceExpect = self.expectation(description: "Stops Fetching")
             
-            stopForceExpect.fulfill()
-        }, force: true)
-        waitForExpectations(timeout: 5, handler: nil)
-        
-        let stopNoForceExpect = self.expectation(description: "Stops Fetching")
-        
-        StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
-            XCTAssertNotNil(commercialStops["CVIN"])
-            XCTAssertNotNil(physicalStops["CVIN00"])
-            
-            stopNoForceExpect.fulfill()
-        }, force: false)
-        waitForExpectations(timeout: 5, handler: nil)
+            StopManager.instance.loadStops(completion: {(commercialStops, physicalStops) in
+                XCTAssertNotNil(commercialStops["CVIN"])
+                XCTAssertNotNil(physicalStops["CVIN00"])
+                
+                stopNoForceExpect.fulfill()
+            }, force: false)
+            waitForExpectations(timeout: 5, handler: nil)
+        }
     }
 
     
@@ -94,8 +95,8 @@ class TPGApiTests: XCTestCase {
     
     func testThermometer(){
         let departuresExpec = self.expectation(description: "Thermometer Fetching")
-        DeparturesManager.instance.loadThermometerFor(departureCode: "43844", completion: {steps in
-            let firstStep = steps.first!
+        DeparturesManager.instance.loadThermometerFor(departureCode: "43844", completion: {thermometer in
+            let firstStep = thermometer.steps.first!
             XCTAssertEqual("43839", firstStep.departureCode)
             XCTAssertEqual("NATI01", firstStep.stop.code)
 
@@ -104,5 +105,6 @@ class TPGApiTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+    
 
 }

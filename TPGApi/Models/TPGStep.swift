@@ -29,11 +29,12 @@ public class TPGStep {
     public init(jsonStep: JSON){
         self.departureCode = jsonStep["departureCode"].stringValue
         
-        dateFormatterGet.dateFormat = "yyyy-MM-ddTHH:mm:ss"
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         if let date = dateFormatterGet.date(from: jsonStep["timestamp"].stringValue){
             self.timestamp = date
         }
         else{
+            print("failed to parse date")
             self.timestamp = Date()
         }
         self.stop = TPGStop(commercialCode: jsonStep["stop"]["stopCode"].stringValue, jsonTpgStop: jsonStep["physicalStop"])

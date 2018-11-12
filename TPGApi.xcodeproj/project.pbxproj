@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		35BEAA2EE95F5EBD7880B02B /* Pods_TPGApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810AFFB01B0088FFED9846AB /* Pods_TPGApiTests.framework */; };
 		371D098C21943F2D00FF2AF9 /* TPGStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D098B21943F2D00FF2AF9 /* TPGStep.swift */; };
+		371D09DF21948D2C00FF2AF9 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D09DE21948D2C00FF2AF9 /* Array+Extensions.swift */; };
+		371D09E1219491C300FF2AF9 /* TPGThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D09E0219491C300FF2AF9 /* TPGThermometer.swift */; };
 		376E20F42191D23B00DC28D6 /* TPGDeparture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EA2191D23A00DC28D6 /* TPGDeparture.swift */; };
 		376E20F52191D23B00DC28D6 /* TPGStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EB2191D23A00DC28D6 /* TPGStop.swift */; };
-		376E20F62191D23B00DC28D6 /* LineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EC2191D23A00DC28D6 /* LineColor.swift */; };
+		376E20F62191D23B00DC28D6 /* TPGLineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EC2191D23A00DC28D6 /* TPGLineColor.swift */; };
 		376E20F72191D23B00DC28D6 /* TPGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20ED2191D23A00DC28D6 /* TPGConnection.swift */; };
 		376E20F82191D23B00DC28D6 /* FileSaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20EF2191D23B00DC28D6 /* FileSaveHelper.swift */; };
 		376E20F92191D23B00DC28D6 /* DeparturesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E20F12191D23B00DC28D6 /* DeparturesManager.swift */; };
@@ -38,9 +40,11 @@
 		222CE33D21CF86BBBC5C4863 /* Pods-TPGApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35168C86E10662B36D7CA46D /* Pods-TPGApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPGApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPGApiTests/Pods-TPGApiTests.release.xcconfig"; sourceTree = "<group>"; };
 		371D098B21943F2D00FF2AF9 /* TPGStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGStep.swift; sourceTree = "<group>"; };
+		371D09DE21948D2C00FF2AF9 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		371D09E0219491C300FF2AF9 /* TPGThermometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGThermometer.swift; sourceTree = "<group>"; };
 		376E20EA2191D23A00DC28D6 /* TPGDeparture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGDeparture.swift; sourceTree = "<group>"; };
 		376E20EB2191D23A00DC28D6 /* TPGStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGStop.swift; sourceTree = "<group>"; };
-		376E20EC2191D23A00DC28D6 /* LineColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColor.swift; sourceTree = "<group>"; };
+		376E20EC2191D23A00DC28D6 /* TPGLineColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGLineColor.swift; sourceTree = "<group>"; };
 		376E20ED2191D23A00DC28D6 /* TPGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGConnection.swift; sourceTree = "<group>"; };
 		376E20EF2191D23B00DC28D6 /* FileSaveHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSaveHelper.swift; sourceTree = "<group>"; };
 		376E20F12191D23B00DC28D6 /* DeparturesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesManager.swift; sourceTree = "<group>"; };
@@ -81,9 +85,10 @@
 			children = (
 				376E20EA2191D23A00DC28D6 /* TPGDeparture.swift */,
 				376E20EB2191D23A00DC28D6 /* TPGStop.swift */,
-				376E20EC2191D23A00DC28D6 /* LineColor.swift */,
+				376E20EC2191D23A00DC28D6 /* TPGLineColor.swift */,
 				376E20ED2191D23A00DC28D6 /* TPGConnection.swift */,
 				371D098B21943F2D00FF2AF9 /* TPGStep.swift */,
+				371D09E0219491C300FF2AF9 /* TPGThermometer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				376E20EF2191D23B00DC28D6 /* FileSaveHelper.swift */,
+				371D09DE21948D2C00FF2AF9 /* Array+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -99,9 +105,9 @@
 		376E20F02191D23B00DC28D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				376E20F32191D23B00DC28D6 /* TPGApiKey.swift */,
 				376E20F12191D23B00DC28D6 /* DeparturesManager.swift */,
 				376E20F22191D23B00DC28D6 /* StopManager.swift */,
-				376E20F32191D23B00DC28D6 /* TPGApiKey.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -390,11 +396,13 @@
 				376E20F42191D23B00DC28D6 /* TPGDeparture.swift in Sources */,
 				376E20F72191D23B00DC28D6 /* TPGConnection.swift in Sources */,
 				376E20FA2191D23B00DC28D6 /* StopManager.swift in Sources */,
+				371D09E1219491C300FF2AF9 /* TPGThermometer.swift in Sources */,
 				376E20F92191D23B00DC28D6 /* DeparturesManager.swift in Sources */,
 				376E20FB2191D23B00DC28D6 /* TPGApiKey.swift in Sources */,
 				371D098C21943F2D00FF2AF9 /* TPGStep.swift in Sources */,
-				376E20F62191D23B00DC28D6 /* LineColor.swift in Sources */,
+				376E20F62191D23B00DC28D6 /* TPGLineColor.swift in Sources */,
 				376E20F52191D23B00DC28D6 /* TPGStop.swift in Sources */,
+				371D09DF21948D2C00FF2AF9 /* Array+Extensions.swift in Sources */,
 				376E20F82191D23B00DC28D6 /* FileSaveHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

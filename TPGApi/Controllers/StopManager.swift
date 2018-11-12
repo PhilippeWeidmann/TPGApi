@@ -17,7 +17,7 @@ public class StopManager {
     public private(set) var physicalStops = [String : TPGStop]()
     public private(set) var stops = [String : TPGStop]()
 
-    private var lineColors = [String : LineColor]()
+    private var lineColors = [String : TPGLineColor]()
     
     private init(){
     }
@@ -89,13 +89,17 @@ public class StopManager {
     
     private func parseStopsFrom(json: JSON){
         for jsonStop in json["stops"].arrayValue{
-            let stop = TPGStop(commercialCode: jsonStop["stopCode"].stringValue,jsonTpgStop: jsonStop["physicalStops"].arrayValue.first!)
-            stops[stop.commercialCode] = stop
+            let commercialStop = TPGStop(commercialCode: jsonStop["stopCode"].stringValue,jsonTpgStop: jsonStop["physicalStops"].arrayValue.first!)
             
             for jsonPhysicalStop in jsonStop["physicalStops"].arrayValue{
                 let stop = TPGStop(commercialCode: jsonStop["stopCode"].stringValue,jsonTpgStop: jsonPhysicalStop)
+                
+                commercialStop.connections.mergeElements(newElements: stop.connections)
+                
                 physicalStops[stop.code] = stop
             }
+            
+            stops[commercialStop.commercialCode] = commercialStop
         }
     }
     
@@ -141,11 +145,11 @@ public class StopManager {
      - Parameter code: The line code displayed on the sign
      - Returns: A line color object representing the colors seen on the sign
      */
-    public func getLineColor(code: String) -> LineColor {
+    public func getLineColor(code: String) -> TPGLineColor {
         if let color = lineColors[code]{
             return color
         }
-        return LineColor.noColor
+        return TPGLineColor.noColor
     }
     
     /**
@@ -155,11 +159,11 @@ public class StopManager {
      - Parameter completion: The delegate called after completion
      - Returns: A line color object representing the colors seen on the sign
      */
-    public func getLineColor(code: String, completion: @escaping ((LineColor) -> Void), force: Bool? = false) {
+    public func getLineColor(code: String? = "", completion: @escaping ((TPGLineColor) -> Void), force: Bool? = false) {
         let url = "https://prod.ivtr-od.tpg.ch/v1/GetLinesColors.json?key=\(TPGApiKey.key)"
         
         if(!force! && lineColors.count > 0){
-            completion(self.getLineColor(code: code))
+            completion(self.getLineColor(code: code!))
         }
         else{
             Alamofire.request(url, method: .get).validate().responseJSON { response in
@@ -176,11 +180,11 @@ public class StopManager {
                         print("There was an error saving the color cache file: \(error)")
                     }
                     
-                    if let color = self.lineColors[code]{
+                    if let color = self.lineColors[code!]{
                         completion(color)
                     }
                     else{
-                        completion(LineColor.noColor)
+                        completion(TPGLineColor.noColor)
                     }
                     
                 case .failure(_):
@@ -190,16 +194,16 @@ public class StopManager {
                         let jsonRootColors = JSON(parseJSON: content)
                         self.parseColorsFrom(json: jsonRootColors)
                         
-                        if let color = self.lineColors[code]{
+                        if let color = self.lineColors[code!]{
                             completion(color)
                         }
                         else{
-                            completion(LineColor.noColor)
+                            completion(TPGLineColor.noColor)
                         }
                         
                     }
                     catch{
-                        completion(LineColor.noColor)
+                        completion(TPGLineColor.noColor)
                     }
                 }
             }
@@ -208,7 +212,7 @@ public class StopManager {
     
     private func parseColorsFrom(json: JSON){
         for jsonColor in json["colors"].arrayValue{
-            self.lineColors[jsonColor["lineCode"].stringValue] = LineColor(jsonColor: jsonColor)
+            self.lineColors[jsonColor["lineCode"].stringValue] =  TPGLineColor(jsonColor: jsonColor)
         }
     }
     

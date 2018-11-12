@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-public class TPGConnection {
+public class TPGConnection: NSObject {
     
     public let lineCode: String
     public let destination: String
@@ -21,4 +21,14 @@ public class TPGConnection {
         self.destinationCode = jsonConnection["destinationCode"].stringValue
     }
     
+    override public var description : String {
+        return "\(lineCode) -> \(destination) (\(destinationCode))"
+    }
+    
+    static func == (lhs: TPGConnection, rhs: TPGConnection) -> Bool {
+        return
+            lhs.lineCode == rhs.lineCode &&
+                lhs.destinationCode == rhs.destinationCode
+    }
 }
+
