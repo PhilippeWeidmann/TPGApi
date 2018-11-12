@@ -38,3 +38,13 @@ DeparturesManager.instance.loadNextDeparturesFor(stopCode: "CVIN", completion: {
 
 })
 ```
+
+### Steps for a given departure
+
+Get the steps for the line of the departure '43844'
+```
+DeparturesManager.instance.loadThermometerFor(departureCode: "43844", completion: {steps in
+
+})
+        
+```
